@@ -1,6 +1,6 @@
 # SONATA
 
-SONATA: A Toolkit to Generate Social Navigation Datasets and HRI
+SOcial NAvigation Toolkit for data Acquisition
 
 ## Introduction
 
