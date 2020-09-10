@@ -1,28 +1,12 @@
 ---
-category: Stuff
-url_path: '/stuff/:id'
+category: Software Requirements
+url_path: null
 title: 'Delete a thing'
-type: 'DELETE'
+type: null
 
 layout: null
 ---
-
-This method allows the user to post a new thing to his stuff.
-
-### Request
-
-* **`:id`** is the id the thing to delete.
-* The headers must include a **valid authentication token**.
-* **The body is omitted**.
-
-### Response
-
-Sends back a collection of things.
-
-```Status: 200 Deleted```
-```{
-    code: 200,
-    message: 'Your thing (id: 736) was deleted'
-}```
-
-For errors responses, see the [response status codes documentation](#response-status-codes).
+1. PyTorch [https://pytorch.org/get-started/locally/](https://pytorch.org/get-started/locally/)
+2. DGL [https://www.dgl.ai/pages/start.html](https://www.dgl.ai/pages/start.html)
+3. PyTorch Geometric [https://pytorch-geometric.readthedocs.io/en/latest/notes/installation.html](https://pytorch-geometric.readthedocs.io/en/latest/notes/installation.html)
+4. PyRep [https://github.com/stepjam/PyRep](https://github.com/stepjam/PyRep) (This link would also help in the installation of CoppeliaSim)
