@@ -136,5 +136,4 @@ After you run the above commands the SONATA GUI opens up.
 
 After you click and save the data, a JSON file is generated and the full episode gets saved with timestamps. For the usecase we take these JSONs and convert them into graphs using socnavData data loader, which is then fed into the GNNs. Once the model is trained you can run the toolkit in test mode by setting TEST_MODE boolean to true in the controller's specificworker.py file.
 
-<a href="https://www.youtube.com/watch?v=i_kkKqTwbBE" target="_blank"><img src="http://img.youtube.com/vi/i_kkKqTwbBE/0.jpg" 
-alt="Reaching the goal" width="240" height="180" border="10" /></a>
+<iframe width="1280" height="720" src="https://www.youtube.com/watch?v=i_kkKqTwbBE" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
