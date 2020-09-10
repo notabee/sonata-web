@@ -1,0 +1,127 @@
+<h1 id="sonata">SONATA</h1>
+<p>SONATA: A Toolkit to Generate Social Navigation Datasets and HRI</p>
+<h2 id="introduction">Introduction</h2>
+<p>The toolkit is used to generate the dataset by simulating the scenarios for robot&#39;s navigation in a social setting. We show an usecase of this data collected from the toolkit by converting into graphs and feeding it into the GNNs to predicts the robot&#39;s path in a given scene. The data collected from the toolkit comprises of the following for a given entity:</p>
+<ul>
+<li>Co-ordinates</li>
+<li>Velocity with respect to the robot</li>
+<li>Type of interaction betweeen the two entities</li>
+<li>Orientation</li>
+<li>Size</li>
+</ul>
+<p>The data is stored in the form of JSON files, with the following structure:</p>
+<pre><code><span class="hljs-string">"timestamp"</span>: <span class="hljs-number">1598462029.7540903</span>,
+        <span class="hljs-string">"walls"</span>: [
+            {
+                <span class="hljs-string">"x1"</span>: <span class="hljs-number">5.64804220199585</span>,
+                <span class="hljs-string">"x2"</span>: <span class="hljs-number">4.9704155921936035</span>,
+                <span class="hljs-string">"y1"</span>: <span class="hljs-number">4.951876163482666</span>,
+                <span class="hljs-string">"y2"</span>: -<span class="hljs-number">1.009736180305481</span>
+            },
+            {
+                <span class="hljs-string">"x1"</span>: <span class="hljs-number">4.970417499542236</span>,
+                <span class="hljs-string">"x2"</span>: -<span class="hljs-number">0</span>.<span class="hljs-number">991195559501648</span>,
+                <span class="hljs-string">"y1"</span>: -<span class="hljs-number">1.0097349882125854</span>,
+                <span class="hljs-string">"y2"</span>: -<span class="hljs-number">0</span>.<span class="hljs-number">3321133852005005</span>
+            },
+            {
+                <span class="hljs-string">"x1"</span>: -<span class="hljs-number">0</span>.<span class="hljs-number">991193413734436</span>,
+                <span class="hljs-string">"x2"</span>: -<span class="hljs-number">0</span>.<span class="hljs-number">3135751187801361</span>,
+                <span class="hljs-string">"y1"</span>: -<span class="hljs-number">0</span>.<span class="hljs-number">332114040851593</span>,
+                <span class="hljs-string">"y2"</span>: <span class="hljs-number">5.629499435424805</span>
+            },
+            {
+                <span class="hljs-string">"x1"</span>: -<span class="hljs-number">0</span>.<span class="hljs-number">3135727047920227</span>,
+                <span class="hljs-string">"x2"</span>: <span class="hljs-number">5.648040294647217</span>,
+                <span class="hljs-string">"y1"</span>: <span class="hljs-number">5.629498481750488</span>,
+                <span class="hljs-string">"y2"</span>: <span class="hljs-number">4.951875686645508</span>
+            }
+        ]
+    },
+    {
+        <span class="hljs-string">"command"</span>: [
+            -<span class="hljs-number">0</span>.<span class="hljs-number">06</span>999999843537807,
+            <span class="hljs-number">0</span>,
+            <span class="hljs-number">0</span>.<span class="hljs-number">25999999046325684</span>
+        ],
+        <span class="hljs-string">"goal"</span>: [
+            {
+                <span class="hljs-string">"x"</span>: <span class="hljs-number">0</span>.<span class="hljs-number">9240278005599976</span>,
+                <span class="hljs-string">"y"</span>: <span class="hljs-number">3.107682704925537</span>
+            }
+        ],
+        <span class="hljs-string">"interaction"</span>: [
+            {
+                <span class="hljs-string">"dst"</span>: <span class="hljs-number">2</span>,
+                <span class="hljs-string">"relation"</span>: <span class="hljs-string">"human_laptop_interaction"</span>,
+                <span class="hljs-string">"src"</span>: <span class="hljs-number">1</span>
+            }
+        ],
+        <span class="hljs-string">"objects"</span>: [
+            {
+                <span class="hljs-string">"a"</span>: <span class="hljs-number">0</span>.<span class="hljs-number">11155806481838226</span>,
+                <span class="hljs-string">"id"</span>: <span class="hljs-number">2</span>,
+                <span class="hljs-string">"size_x"</span>: <span class="hljs-number">0</span>.<span class="hljs-number">8999996185302734</span>,
+                <span class="hljs-string">"size_y"</span>: <span class="hljs-number">0</span>.<span class="hljs-number">800000011920929</span>,
+                <span class="hljs-string">"va"</span>: <span class="hljs-number">0</span>.<span class="hljs-number">0016205161</span>809921265,
+                <span class="hljs-string">"vx"</span>: <span class="hljs-number">0</span>.<span class="hljs-number">006066322326660156</span>,
+                <span class="hljs-string">"vy"</span>: -<span class="hljs-number">0</span>.<span class="hljs-number">005</span>913734436035156,
+                <span class="hljs-string">"x"</span>: <span class="hljs-number">3.3170711994171143</span>,
+                <span class="hljs-string">"y"</span>: <span class="hljs-number">3.743642807006836</span>
+            }
+        ],
+        <span class="hljs-string">"people"</span>: [
+            {
+                <span class="hljs-string">"a"</span>: -<span class="hljs-number">1.458441972732544</span>,
+                <span class="hljs-string">"id"</span>: <span class="hljs-number">1</span>,
+                <span class="hljs-string">"va"</span>: <span class="hljs-number">0</span>.<span class="hljs-number">0016202</span>926635742188,
+                <span class="hljs-string">"vx"</span>: -<span class="hljs-number">1.5497207641601562</span>e-<span class="hljs-number">05</span>,
+                <span class="hljs-string">"vy"</span>: -<span class="hljs-number">0</span>.<span class="hljs-number">005223274230</span>957031,
+                <span class="hljs-string">"x"</span>: <span class="hljs-number">2.8968095779418945</span>,
+                <span class="hljs-string">"y"</span>: -<span class="hljs-number">0</span>.<span class="hljs-number">0072</span>99661636352539
+            }
+        ]
+</code></pre><h2 id="software-requirements">Software requirements</h2>
+<ol>
+<li>PyTorch <a href="https://pytorch.org/get-started/locally/">https://pytorch.org/get-started/locally/</a></li>
+<li>DGL <a href="https://www.dgl.ai/pages/start.html">https://www.dgl.ai/pages/start.html</a></li>
+<li>PyTorch Geometric <a href="https://pytorch-geometric.readthedocs.io/en/latest/notes/installation.html">https://pytorch-geometric.readthedocs.io/en/latest/notes/installation.html</a></li>
+<li>PyRep <a href="https://github.com/stepjam/PyRep">https://github.com/stepjam/PyRep</a> (This link would also help in the installation of CoppeliaSim)</li>
+</ol>
+<h1 id="running-the-repo">Running the repo</h1>
+<p>After cloning the directory, execute the following commands:</p>
+<ol>
+<li>Shift the interfaces to proper location.<pre><code> cp interfaces<span class="hljs-regexp">/* /</span>opt<span class="hljs-regexp">/robocomp/i</span>nterfaces
+ cp interfaces<span class="hljs-regexp">/* /</span>opt<span class="hljs-regexp">/robocomp/i</span>nterfaces<span class="hljs-regexp">/IDSLs</span>
+</code></pre></li>
+<li>Run the tool.<pre><code> bash <span class="hljs-keyword">run</span>.<span class="bash">sh</span>
+</code></pre></li>
+</ol>
+<h1 id="usage">Usage</h1>
+<p>After you run the above commands the SONATA GUI opens up.</p>
+<ul>
+<li>Write the contributor&#39;s(user&#39;s) name so that the data saved can be marked by the users name.</li>
+</ul>
+<p><img src="./images/get_contributer.png" alt="contributor"></p>
+<ul>
+<li>After this the simulation will start with a green tint, and until the mouse controller is clicked robot will not move. </li>
+</ul>
+<p><img src="./images/simulation_green_start.png" alt="simulator"></p>
+<ul>
+<li>Select the configuration from the top bar of the SONATA GUI to select the range of different entities you want to add in the scene. You can also regenerate a scene if you don&#39;t like the settings of entities by using the regenerate button from the top bar. We also provided blue lines between two entities to show that they are interacting with each other.</li>
+</ul>
+<p><img src="./images/select_range.png" alt="configuration"></p>
+<ul>
+<li>click on the mouse controller and hold the left key and drag the mouse to move the robot in that direction.</li>
+</ul>
+<p><img src="./images/click_joystick.png" alt="mouse"></p>
+<ul>
+<li>Move the robot to the goal marked by the cone.</li>
+</ul>
+<p><img src="./images/reach_goal.png" alt="goal"></p>
+<ul>
+<li>Save your data.</li>
+</ul>
+<p><img src="./images/save.png" alt="save"></p>
+<p>After you click and save the data, a JSON file is generated and the full episode gets saved with timestamps. For the usecase we take these JSONs and convert them into graphs using socnavData data loader, which is then fed into the GNNs. Once the model is trained you can run the toolkit in test mode by setting TEST_MODE boolean to true in the controller&#39;s specificworker.py file.</p>
+
